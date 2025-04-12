@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaders</title>
+</head>
+<body>
+    <h1>Meet Our Leaders</h1>
+    <ul>
+        {% for leader in leaders %}
+            <li>
+                {% if leader.image %}
+                    <img src="{{ leader.image.url }}" alt="{{ leader.name }}" style="width:150px;height:150px;">
+                {% endif %}
+                <h2>{{ leader.name }}</h2>
+                <p><strong>Position:</strong> {{ leader.position }}</p>
+                <p><strong>Bio:</strong> {{ leader.bio }}</p>
+                <p><strong>Values:</strong> {{ leader.values }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
